@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ContactForm from './ContactForm'
+import FormPopUp from './FormPopUp';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <section className="contacts-page">
+        <div className="contacts-page--content container">
+          <div className="contacts-page--head section--head">
+            <h1 className="section--title">Get in touch</h1>
+            <div className="section--subtitle">Let us know <br/ >
+              how we can help
+            </div>
+          </div>
+          <div className="contacts-page--body">
+            <div className="contact--form-wrapper">
+              <ContactForm/ >
+            </div>
+          </div>
+        </div>
+        <FormPopUp/ >
+      </section>
     </div>
   );
 }
