@@ -21,26 +21,26 @@ class ContactForm extends React.Component {
 
   submitHandler = (event) => {
     event.preventDefault();
-    this.setState({isSubmited: true});
+    this.setState({ isSubmited: true });
 
     axios({
-      method: "POST", 
-      url:"http://localhost:3002/send", 
-      data:  this.state,
-    }).then((response)=>{
-      if (response.data.status === 'success'){
-        this.setState({isSubmited: false});
+      method: "POST",
+      url: "http://localhost:3002/send",
+      data: this.state,
+    }).then((response) => {
+      if (response.data.status === 'success') {
+        this.setState({ isSubmited: false });
         this.resetForm();
-        this.props.changeRequestSentState(true); 
-      }else if(response.data.status === 'fail'){
-        this.setState({isSubmited: false});
+        this.props.changeRequestSentState(true);
+      } else if (response.data.status === 'fail') {
+        this.setState({ isSubmited: false });
         alert("Message failed to send.");
       }
     })
   }
 
-  resetForm(){
-    this.setState({name: '', email: '', message: ''});
+  resetForm() {
+    this.setState({ name: '', email: '', message: '' });
   }
 
   render() {

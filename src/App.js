@@ -24,7 +24,7 @@ class App extends React.Component {
           <div className="contacts-page--content container">
             <div className="contacts-page--head section--head">
               <h1 className="section--title">Get in touch</h1>
-              <div className="section--subtitle">Let us know <br/ >
+              <div className="section--subtitle">Let us know <br />
                 how we can help
               </div>
             </div>

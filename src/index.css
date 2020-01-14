@@ -3,7 +3,7 @@ body, html {
     padding: 0;
 }
 html {
-    font-family: Helvetica Neue,Helvetica,serif;
+    font-family: 'Helvetica Neue',Helvetica,serif;
     font-size: 18px;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
@@ -15,7 +15,7 @@ body {
     -webkit-text-size-adjust: none;
 }
 h1, h2, h3, h4 {
-    font-family: Circe, Arial, sans-serif;
+    font-family: 'Circe', 'Muli', Arial, sans-serif;
     font-weight: 700;
     margin: 0;
 }
@@ -36,7 +36,7 @@ a {
     outline: none;
 }
 button, input, select, textarea {
-    font-family: Helvetica Neue,Helvetica,serif;
+    font-family: 'Helvetica Neue',Helvetica,serif;
     font-size: 18px;
     color: #292929;
 }
@@ -62,7 +62,7 @@ button, input, select, textarea {
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 40px;
-    font-family: Circe;
+    font-family: 'Circe', 'Muli', sans-serif;
 }
 .contacts-page--head {
     width: 100%;
@@ -115,7 +115,7 @@ textarea {
     display: inline-block;
     padding: 18px 40px 14px;
     border-radius: 32px;
-    font-family: Circe;
+    font-family: 'Circe', 'Muli', sans-serif;
     font-weight: 700;
     color: #fff;
     border: none;

@@ -3,7 +3,7 @@ import React from 'react';
 function FormPopUp(props) {
   const isRequestSent = props.isRequestSent;
   let popUpClass = '';
-  if(isRequestSent) {
+  if (isRequestSent) {
     popUpClass = 'popup--wrapper'
   } else {
     popUpClass = 'hidden'
