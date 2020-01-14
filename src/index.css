@@ -134,6 +134,9 @@ textarea {
     padding: 18px 80px 14px;
 }
 
+.hidden {
+    display: none;
+}
 .popup--wrapper {
     display: none;
     justify-content: center;
