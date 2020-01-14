@@ -9,6 +9,7 @@ class ContactForm extends React.Component {
       email: '',
       message: '',
 
+      isSubmited: false,
     };
   }
 
@@ -20,6 +21,7 @@ class ContactForm extends React.Component {
 
   submitHandler = (event) => {
     event.preventDefault();
+    this.setState({isSubmited: true});
 
     axios({
       method: "POST", 
@@ -27,18 +29,22 @@ class ContactForm extends React.Component {
       data:  this.state,
     }).then((response)=>{
       if (response.data.status === 'success'){
-        alert("Message Sent."); 
+        this.setState({isSubmited: false});
         this.resetForm();
+        this.props.changeRequestSentState(true); 
       }else if(response.data.status === 'fail'){
+        this.setState({isSubmited: false});
         alert("Message failed to send.");
       }
     })
   }
+
   resetForm(){
     this.setState({name: '', email: '', message: ''});
- }
+  }
 
   render() {
+    const isSubmited = this.state.isSubmited;
     return (
       <form className="contact--form" method="post" action="/" name="getintouch" onSubmit={this.submitHandler}>
         <input type="hidden" name="form-name" value="getintouch" />
@@ -46,7 +52,7 @@ class ContactForm extends React.Component {
         <input type="text" name="name" className="contact--form-input" placeholder="Name" required value={this.state.name} onChange={this.changeHandler} />
         <input type="email" name="email" className="contact--form-input" placeholder="E-mail" required value={this.state.email} onChange={this.changeHandler} />
         <textarea name="message" className="contact--form-input" placeholder="Message" value={this.state.message} onChange={this.changeHandler} />
-        <button type="submit" className="link-button dark wide">Send</button>
+        <button type="submit" className="link-button dark wide">{isSubmited ? 'Sending...' : 'Send'}</button>
       </form>
     );
   }
